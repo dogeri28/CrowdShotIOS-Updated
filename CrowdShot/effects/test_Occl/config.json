@@ -1,0 +1,13 @@
+{
+  "name": "test_Occl",
+  "frx": {
+    "type": "3d_anim",
+    "3d_anim": {
+      "type": "vfx"
+    }
+  },
+  "recognizer": [
+    "occlusion"
+  ],
+  "recordDuration": 10
+}

@@ -1,0 +1,86 @@
+draw_order = [
+  "TriSkn",
+  "!glfx_UPDATE_BG",
+  "retouch",
+  "!glfx_UPDATE_BG",
+  "Q0",
+  "Q1",
+  "Q2",
+  "Q3"
+]
+passes = [ "tex_makeup.toml" ]
+no_preload_textures = [ ]
+adjust_znear = 0
+adjust_zfar = 0
+beauty_morph_deltas = ""
+
+[materials.TriSkn]
+vs = "skin.vert"
+fs = "skin.frag"
+blend = "off"
+backfaces = true
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = { }
+
+[materials.retouch]
+vs = "retouch.vert"
+fs = "retouch.frag"
+blend = "off"
+backfaces = false
+colorwrite = true
+zwrite = true
+shadow = false
+onface = true
+mouth = true
+
+  [materials.retouch.samplers]
+  tex_softlight = 0
+  tex_makeup = 1
+  tex_highlight = 2
+
+[materials.Q0]
+vs = "lips.vert"
+fs = "lips.frag"
+blend = "off"
+backfaces = false
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = { }
+
+[materials.Q1]
+vs = "leye.vert"
+fs = "leye.frag"
+blend = "off"
+backfaces = true
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = { }
+
+[materials.Q2]
+vs = "reye.vert"
+fs = "reye.frag"
+blend = "off"
+backfaces = true
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = { }
+
+[materials.Q3]
+vs = "lips_shine.vert"
+fs = "lips_shine.frag"
+blend = "off"
+backfaces = false
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = { }

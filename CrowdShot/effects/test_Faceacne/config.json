@@ -1,0 +1,13 @@
+{
+  "name": "Test_eyebags",
+  "frx": {
+    "type" : "3d_anim",
+    "3d_anim" : {
+      "type" : "vfx"
+    } 
+  },
+  "recognizer": [
+    "face_acne"
+  ],
+  "recordDuration" : 10
+}

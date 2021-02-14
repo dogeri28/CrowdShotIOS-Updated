@@ -1,0 +1,12 @@
+draw_order = ["TriMat"]
+
+[materials.TriMat]
+vs = "skin.vert"
+fs = "skin.frag"
+blend = "off"
+backfaces = true
+colorwrite = true
+zwrite = false
+ztest = false
+shadow = false
+samplers = {}

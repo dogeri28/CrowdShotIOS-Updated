@@ -1,0 +1,8 @@
+app_identifier("uk.co.thoughtlights.CrowdShot") # The bundle identifier of your app
+apple_id("dogeri28@yahoo.com") # Your Apple email address
+
+itc_team_id("32205266") # App Store Connect Team ID
+team_id("Q3LDCES9C7") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

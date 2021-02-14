@@ -1,0 +1,14 @@
+{
+  "name": "just_creepy_smile",
+  "frx": {
+    "type": "3d_anim",
+    "3d_anim": {
+      "type": "vfx"
+    }
+  },
+  "recordDuration": 15,
+  "rotation_vector": true,
+  "recognizer" : [
+    "creepy_smile"
+  ]
+}

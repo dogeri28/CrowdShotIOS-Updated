@@ -1,0 +1,6 @@
+framework module Pods_CrowdShot {
+  umbrella header "Pods-CrowdShot-umbrella.h"
+
+  export *
+  module * { export * }
+}

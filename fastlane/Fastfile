@@ -1,0 +1,54 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+    # Use this lane to deploy to Itunes Connect #
+    desc "Builds and Submits CrowdShot iOS App to Itunes Connect"
+      lane :deploycrowdshot do
+      increment_build_number
+
+      cocoapods
+
+      build_app(workspace: "CrowdShot.xcworkspace",
+    	scheme: "CrowdShot",
+    	export_method: "app-store",
+        	export_options: {
+         		provisioningProfiles: {
+            		"CrowdShot-ProvisionProfile-Prod2021" => "uk.co.thoughtlights.CrowdShot",
+                "CSOneSignalProvProfile" => "uk.co.thoughtlights.CrowdShot.OneSignalNotificationServiceExtension"
+          		}
+        	})
+
+        # run_tests(workspace: "CrowdShot.xcworkspace",
+        #             devices: ["iPhone 8"],
+        #             scheme: "CrowdShotTests")
+
+          pilot(
+            skip_waiting_for_build_processing: true
+          )
+
+        clean_build_artifacts
+
+        commit_version_bump(
+          message: "Fastlane iOS Released new build #{lane_context[SharedValues::BUILD_NUMBER]} [ci skip]",
+          xcodeproj:"./CrowdShot.xcodeproj",
+          force: true
+        )
+      end
+
+  end

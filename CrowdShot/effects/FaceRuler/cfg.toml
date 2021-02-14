@@ -1,0 +1,16 @@
+msaa = 1
+shadowmap_size = 512
+adjust_znear = 500
+adjust_zfar = 1500
+draw_order = ['Distance_to_face_text']
+
+# PBR
+[materials.Distance_to_face_text]
+vs = "text_on_face.vert"
+fs = "text_on_face.frag"
+blend = "alpha" # "alpha", "premul_alpha", "screen", "add", "multiply", "coverage", "off"
+backfaces = false
+colorwrite = true
+zwrite = true
+shadow = false
+samplers = {}
